@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace NoteTaker
 {
@@ -13,12 +14,21 @@ namespace NoteTaker
             InitializeComponent();
             SidePanel.Height = homeButton.Height;
             SidePanel.Top = homeButton.Top;
-            //textNotesForm = null;
+            active.Visible = true;
+            active.Top = textNotsButton.Top;
+            main.home = false;
+            main instance = main.Instance;
+            LoadUserControl(instance);
         }
         private void homepageB_Click(object sender, EventArgs e)
         {
             SidePanel.Height = homeButton.Height;
             SidePanel.Top = homeButton.Top;
+            active.Visible = true;
+            active.Top = textNotsButton.Top;
+            main.home = false;
+            main instance = main.Instance;
+            LoadUserControl(instance);
         }
         private void textNotesB_Click(object sender, EventArgs e)
         {
@@ -72,6 +82,7 @@ namespace NoteTaker
             RecycleBinForm.home = false;
             RecycleBinForm instance = RecycleBinForm.Instance;
             LoadUserControl(instance);
+            instance.DisplayNoteEntries();
         }
         private void audiosB_Click(object sender, EventArgs e)
         {
@@ -109,6 +120,11 @@ namespace NoteTaker
             f.Location = new Point(10, 10);
             f.BringToFront();
             //f.Show();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            WindowState=FormWindowState.Minimized;
         }
     }
 }

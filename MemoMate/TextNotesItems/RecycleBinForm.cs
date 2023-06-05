@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
 
 namespace NoteTaker
 {
@@ -9,7 +10,8 @@ namespace NoteTaker
         private static RecycleBinForm instance;
         private NotesManager notesManager;
         public static bool home = true;
-        public string filePath = @"C:\Users\omar\Documents\Notes.json";
+        public string filePath;
+        public string solutionFolderPath;
         public static RecycleBinForm Instance
         {
             get
@@ -27,12 +29,14 @@ namespace NoteTaker
         private RecycleBinForm()
         {
             InitializeComponent();
+            solutionFolderPath = AppDomain.CurrentDomain.BaseDirectory;
+            filePath = Path.Combine(solutionFolderPath, "DataFiles", "TextNotes.json");
             notesManager = new NotesManager(filePath);
-            DisplayNoteEntries();
-            timer1.Start();
+            DisplayNoteEntries();         
         }
-        private void DisplayNoteEntries()
-        {
+        public void DisplayNoteEntries()
+        { 
+            timer1.Start();
             // Clear the note entries panel
             flowLayoutPanel1.Controls.Clear();
             notesManager.LoadNotesFromFile(filePath);
