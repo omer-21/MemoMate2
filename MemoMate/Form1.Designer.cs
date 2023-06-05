@@ -48,7 +48,6 @@ namespace NoteTaker
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
             this.childPanel = new System.Windows.Forms.Panel();
@@ -231,7 +230,7 @@ namespace NoteTaker
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label1.Location = new System.Drawing.Point(252, 19);
+            this.label1.Location = new System.Drawing.Point(252, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 23);
             this.label1.TabIndex = 7;
@@ -250,7 +249,7 @@ namespace NoteTaker
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(360, 19);
+            this.label4.Location = new System.Drawing.Point(360, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(197, 21);
             this.label4.TabIndex = 3;
@@ -301,21 +300,6 @@ namespace NoteTaker
             this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button10.UseVisualStyleBackColor = true;
             // 
-            // button11
-            // 
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(890, 19);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(32, 35);
-            this.button11.TabIndex = 4;
-            this.button11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button11.UseVisualStyleBackColor = true;
-            // 
             // button12
             // 
             this.button12.FlatAppearance.BorderSize = 0;
@@ -324,12 +308,13 @@ namespace NoteTaker
             this.button12.ForeColor = System.Drawing.Color.White;
             this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.Location = new System.Drawing.Point(928, 19);
+            this.button12.Location = new System.Drawing.Point(938, 20);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(32, 35);
+            this.button12.Size = new System.Drawing.Size(33, 34);
             this.button12.TabIndex = 4;
             this.button12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // closeButton
             // 
@@ -349,7 +334,7 @@ namespace NoteTaker
             // 
             // childPanel
             // 
-            this.childPanel.Location = new System.Drawing.Point(210, 54);
+            this.childPanel.Location = new System.Drawing.Point(209, 61);
             this.childPanel.Name = "childPanel";
             this.childPanel.Size = new System.Drawing.Size(815, 520);
             this.childPanel.TabIndex = 8;
@@ -364,7 +349,6 @@ namespace NoteTaker
             this.Controls.Add(this.label4);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
@@ -394,7 +378,6 @@ namespace NoteTaker
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Label label4;

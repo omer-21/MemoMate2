@@ -27,6 +27,7 @@ namespace NoteTaker
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            
             if (NoteName != "" && NoteText != "")
             {
                 NoteName = txtNoteName.Text;

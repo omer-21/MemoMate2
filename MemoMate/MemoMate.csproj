@@ -201,6 +201,12 @@
     <Compile Include="AudiosForm.Designer.cs">
       <DependentUpon>AudiosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HomePageForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomePageForm.Designer.cs">
+      <DependentUpon>HomePageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TextNotesItems\EditNoteEntryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,8 +260,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AudiosForm.resx">
+      <DependentUpon>AudiosForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextNotesItems\IndexForm.resx">
+      <DependentUpon>IndexForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VideosForm.resx">
       <DependentUpon>VideosForm.cs</DependentUpon>
@@ -303,21 +315,19 @@
     </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\SkiaSharp.NativeAssets.macOS.2.88.3\build\net462\SkiaSharp.NativeAssets.macOS.targets" Condition="Exists('..\packages\SkiaSharp.NativeAssets.macOS.2.88.3\build\net462\SkiaSharp.NativeAssets.macOS.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Sentry.3.28.1\build\Sentry.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Sentry.3.28.1\build\Sentry.targets'))" />
+    <Error Condition="!Exists('..\packages\VisioForge.DotNet.Core.Redist.Base.x64.15.5.79\build\VisioForge.DotNet.Core.Redist.Base.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\VisioForge.DotNet.Core.Redist.Base.x64.15.5.79\build\VisioForge.DotNet.Core.Redist.Base.x64.targets'))" />
+    <Error Condition="!Exists('..\packages\VisioForge.DotNet.Core.Redist.VideoCapture.x64.15.5.79\build\VisioForge.DotNet.Core.Redist.VideoCapture.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\VisioForge.DotNet.Core.Redist.VideoCapture.x64.15.5.79\build\VisioForge.DotNet.Core.Redist.VideoCapture.x64.targets'))" />
     <Error Condition="!Exists('..\packages\SkiaSharp.NativeAssets.macOS.2.88.3\build\net462\SkiaSharp.NativeAssets.macOS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SkiaSharp.NativeAssets.macOS.2.88.3\build\net462\SkiaSharp.NativeAssets.macOS.targets'))" />
     <Error Condition="!Exists('..\packages\SkiaSharp.NativeAssets.Win32.2.88.3\build\net462\SkiaSharp.NativeAssets.Win32.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SkiaSharp.NativeAssets.Win32.2.88.3\build\net462\SkiaSharp.NativeAssets.Win32.targets'))" />
-    <Error Condition="!Exists('..\packages\Sentry.3.28.1\build\Sentry.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Sentry.3.28.1\build\Sentry.targets'))" />
-    <Error Condition="!Exists('..\packages\VisioForge.DotNet.Core.Redist.Base.x64.15.5.72\build\VisioForge.DotNet.Core.Redist.Base.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\VisioForge.DotNet.Core.Redist.Base.x64.15.5.72\build\VisioForge.DotNet.Core.Redist.Base.x64.targets'))" />
-    <Error Condition="!Exists('..\packages\VisioForge.DotNet.Core.Redist.VideoCapture.x64.15.5.72\build\VisioForge.DotNet.Core.Redist.VideoCapture.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\VisioForge.DotNet.Core.Redist.VideoCapture.x64.15.5.72\build\VisioForge.DotNet.Core.Redist.VideoCapture.x64.targets'))" />
-    <Error Condition="!Exists('..\packages\VisioForge.DotNet.Core.Redist.MP4.x64.15.5.72\build\VisioForge.DotNet.Core.Redist.MP4.x64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\VisioForge.DotNet.Core.Redist.MP4.x64.15.5.72\build\VisioForge.DotNet.Core.Redist.MP4.x64.targets'))" />
   </Target>
-  <Import Project="..\packages\SkiaSharp.NativeAssets.Win32.2.88.3\build\net462\SkiaSharp.NativeAssets.Win32.targets" Condition="Exists('..\packages\SkiaSharp.NativeAssets.Win32.2.88.3\build\net462\SkiaSharp.NativeAssets.Win32.targets')" />
   <Import Project="..\packages\Sentry.3.28.1\build\Sentry.targets" Condition="Exists('..\packages\Sentry.3.28.1\build\Sentry.targets')" />
-  <Import Project="..\packages\VisioForge.DotNet.Core.Redist.Base.x64.15.5.72\build\VisioForge.DotNet.Core.Redist.Base.x64.targets" Condition="Exists('..\packages\VisioForge.DotNet.Core.Redist.Base.x64.15.5.72\build\VisioForge.DotNet.Core.Redist.Base.x64.targets')" />
-  <Import Project="..\packages\VisioForge.DotNet.Core.Redist.VideoCapture.x64.15.5.72\build\VisioForge.DotNet.Core.Redist.VideoCapture.x64.targets" Condition="Exists('..\packages\VisioForge.DotNet.Core.Redist.VideoCapture.x64.15.5.72\build\VisioForge.DotNet.Core.Redist.VideoCapture.x64.targets')" />
-  <Import Project="..\packages\VisioForge.DotNet.Core.Redist.MP4.x64.15.5.72\build\VisioForge.DotNet.Core.Redist.MP4.x64.targets" Condition="Exists('..\packages\VisioForge.DotNet.Core.Redist.MP4.x64.15.5.72\build\VisioForge.DotNet.Core.Redist.MP4.x64.targets')" />
+  <Import Project="..\packages\VisioForge.DotNet.Core.Redist.Base.x64.15.5.79\build\VisioForge.DotNet.Core.Redist.Base.x64.targets" Condition="Exists('..\packages\VisioForge.DotNet.Core.Redist.Base.x64.15.5.79\build\VisioForge.DotNet.Core.Redist.Base.x64.targets')" />
+  <Import Project="..\packages\VisioForge.DotNet.Core.Redist.VideoCapture.x64.15.5.79\build\VisioForge.DotNet.Core.Redist.VideoCapture.x64.targets" Condition="Exists('..\packages\VisioForge.DotNet.Core.Redist.VideoCapture.x64.15.5.79\build\VisioForge.DotNet.Core.Redist.VideoCapture.x64.targets')" />
+  <Import Project="..\packages\SkiaSharp.NativeAssets.macOS.2.88.3\build\net462\SkiaSharp.NativeAssets.macOS.targets" Condition="Exists('..\packages\SkiaSharp.NativeAssets.macOS.2.88.3\build\net462\SkiaSharp.NativeAssets.macOS.targets')" />
+  <Import Project="..\packages\SkiaSharp.NativeAssets.Win32.2.88.3\build\net462\SkiaSharp.NativeAssets.Win32.targets" Condition="Exists('..\packages\SkiaSharp.NativeAssets.Win32.2.88.3\build\net462\SkiaSharp.NativeAssets.Win32.targets')" />
 </Project>

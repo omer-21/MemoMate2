@@ -12,10 +12,15 @@ namespace NoteTaker
     public class NotesManager
     {
         private List<NoteEntry> notes;
-        public NotesManager(string filepath)
+        string solutionFolderPath;
+        string filePath;
+        public NotesManager()
         {
             notes = new List<NoteEntry>();
-            LoadNotesFromFile(filepath);
+            solutionFolderPath = AppDomain.CurrentDomain.BaseDirectory;
+            filePath = Path.Combine(solutionFolderPath, "DataFiles", "textNotesFile.json");
+            LoadNotesFromFile();
+            //C:\Users\omar\Documents\Notes.json
         }
         public void AddNote(string noteName, DateTime date, string input, Font font, Color color, int size)
         {
@@ -43,12 +48,12 @@ namespace NoteTaker
             List<NoteEntry> machingNotes = notes.FindAll(obj => obj.Name.IndexOf(content, StringComparison.OrdinalIgnoreCase) >= 0 || obj.Text.IndexOf(content, StringComparison.OrdinalIgnoreCase) >= 0);
             return machingNotes;
         }
-        public void SaveNotesToFile(string filePath)
+        public void SaveNotesToFile()
         {
             string json = JsonConvert.SerializeObject(notes);
             File.WriteAllText(filePath, json);
         }
-        public void LoadNotesFromFile(string filePath)
+        public void LoadNotesFromFile()
         {
             if (File.Exists(filePath))
             {

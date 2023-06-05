@@ -9,7 +9,6 @@ namespace NoteTaker
         private static RecycleBinForm instance;
         private NotesManager notesManager;
         public static bool home = true;
-        public string filePath = @"C:\Users\omar\Documents\Notes.json";
         public static RecycleBinForm Instance
         {
             get
@@ -27,7 +26,7 @@ namespace NoteTaker
         private RecycleBinForm()
         {
             InitializeComponent();
-            notesManager = new NotesManager(filePath);
+            notesManager = new NotesManager();
             DisplayNoteEntries();
             timer1.Start();
         }
@@ -35,7 +34,7 @@ namespace NoteTaker
         {
             // Clear the note entries panel
             flowLayoutPanel1.Controls.Clear();
-            notesManager.LoadNotesFromFile(filePath);
+            notesManager.LoadNotesFromFile();
             // Add a NoteEntryControl for each note in noteEntries
             foreach (NoteEntry note in notesManager.GetAllNotes())
             {

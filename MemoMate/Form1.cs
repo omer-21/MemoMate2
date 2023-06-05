@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace NoteTaker
@@ -13,12 +11,21 @@ namespace NoteTaker
             InitializeComponent();
             SidePanel.Height = homeButton.Height;
             SidePanel.Top = homeButton.Top;
-            //textNotesForm = null;
+            active.Visible = true;
+            active.Top = textNotsButton.Top;
+            HomePageForm.home = false;
+            HomePageForm instance = HomePageForm.Instance;
+            LoadUserControl(instance);
         }
         private void homepageB_Click(object sender, EventArgs e)
         {
             SidePanel.Height = homeButton.Height;
             SidePanel.Top = homeButton.Top;
+            active.Visible = true;
+            active.Top = textNotsButton.Top;
+            HomePageForm.home = false;
+            HomePageForm instance = HomePageForm.Instance;
+            LoadUserControl(instance);
         }
         private void textNotesB_Click(object sender, EventArgs e)
         {
@@ -30,8 +37,6 @@ namespace NoteTaker
             IndexForm instance = IndexForm.Instance;
             LoadUserControl(instance);
         }
-        //Screenshot codes:
-        //{
         private void imagesB_Click(object sender, EventArgs e)
         {
             SidePanel.Height = imagesButton.Height;
@@ -87,16 +92,6 @@ namespace NoteTaker
         {
             Application.Exit();
         }
-        public void Loadform(object Form)
-        {
-            if (this.childPanel.Controls.Count > 0)
-                this.childPanel.Controls.RemoveAt(0);
-            Form f = Form as Form;
-            //f.TopLevel = false;
-            //f.Dock = DockStyle.Fill;
-            f.BringToFront();
-            //f.Show();
-        }
         public void LoadUserControl(object Form)
         {
             if (this.childPanel.Controls.Count > 0)
@@ -109,6 +104,11 @@ namespace NoteTaker
             f.Location = new Point(10, 10);
             f.BringToFront();
             //f.Show();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }

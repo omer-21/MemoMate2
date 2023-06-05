@@ -67,8 +67,8 @@ namespace NoteTaker
             this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchButton.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.searchButton.ForeColor = System.Drawing.Color.White;
-            //this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
-            //this.searchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
+            this.searchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.searchButton.Location = new System.Drawing.Point(311, 10);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(102, 30);
@@ -88,8 +88,8 @@ namespace NoteTaker
             this.newNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newNoteButton.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.newNoteButton.ForeColor = System.Drawing.Color.White;
-            //this.newNoteButton.Image = ((System.Drawing.Image)(resources.GetObject("newNoteButton.Image")));
-            //this.newNoteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.newNoteButton.Image = ((System.Drawing.Image)(resources.GetObject("newNoteButton.Image")));
+            this.newNoteButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.newNoteButton.Location = new System.Drawing.Point(437, 9);
             this.newNoteButton.Name = "newNoteButton";
             this.newNoteButton.Size = new System.Drawing.Size(117, 32);
@@ -110,8 +110,8 @@ namespace NoteTaker
             this.clearSearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearSearchButton.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.clearSearchButton.ForeColor = System.Drawing.Color.White;
-            //this.clearSearchButton.Image = ((System.Drawing.Image)(resources.GetObject("clearSearchButton.Image")));
-            //this.clearSearchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.clearSearchButton.Image = ((System.Drawing.Image)(resources.GetObject("clearSearchButton.Image")));
+            this.clearSearchButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.clearSearchButton.Location = new System.Drawing.Point(21, 10);
             this.clearSearchButton.Name = "clearSearchButton";
             this.clearSearchButton.Size = new System.Drawing.Size(80, 30);
