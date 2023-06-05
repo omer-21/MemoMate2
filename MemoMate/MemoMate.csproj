@@ -66,6 +66,9 @@
     <Reference Include="NAudio.WinMM, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
       <HintPath>..\packages\NAudio.WinMM.2.1.0\lib\netstandard2.0\NAudio.WinMM.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Sentry, Version=3.28.1.0, Culture=neutral, PublicKeyToken=fba2ec45388e2af0, processorArchitecture=MSIL">
       <HintPath>..\packages\Sentry.3.28.1\lib\net461\Sentry.dll</HintPath>
     </Reference>
@@ -186,11 +189,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AudiousForm.cs">
+    <Compile Include="AlarmsForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AlarmsForm.Designer.cs">
+      <DependentUpon>AlarmsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AudiosForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AudiosForm.Designer.cs">
+      <DependentUpon>AudiosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextNotesItems\EditNoteEntryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AudiousForm.Designer.cs">
-      <DependentUpon>AudiousForm.cs</DependentUpon>
+    <Compile Include="TextNotesItems\EditNoteEntryForm.Designer.cs">
+      <DependentUpon>EditNoteEntryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -198,29 +213,49 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImagesForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImagesForm.Designer.cs">
+      <DependentUpon>ImagesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MediaFile.cs" />
-    <Compile Include="Video2.cs">
+    <Compile Include="TextNotesItems\IndexForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextNotesItems\IndexForm.Designer.cs">
+      <DependentUpon>IndexForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextNotesItems\NewNoteEntryForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Video2.Designer.cs">
-      <DependentUpon>Video2.cs</DependentUpon>
+    <Compile Include="TextNotesItems\NewNoteEntryForm.Designer.cs">
+      <DependentUpon>NewNoteEntryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextNotesItems\NoteEntry.cs" />
+    <Compile Include="TextNotesItems\NoteEntryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextNotesItems\NoteEntryControl.Designer.cs">
+      <DependentUpon>NoteEntryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextNotesItems\NotesManager.cs" />
+    <Compile Include="TextNotesItems\RecycleBinForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextNotesItems\RecycleBinForm.Designer.cs">
+      <DependentUpon>RecycleBinForm.cs</DependentUpon>
     </Compile>
     <Compile Include="VideosForm.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="VideosForm.Designer.cs">
       <DependentUpon>VideosForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AudiousForm.resx">
-      <DependentUpon>AudiousForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Video2.resx">
-      <DependentUpon>Video2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VideosForm.resx">
       <DependentUpon>VideosForm.cs</DependentUpon>

@@ -1,4 +1,6 @@
-﻿namespace NoteTaker
+﻿using System.Windows.Forms;
+
+namespace NoteTaker
 {
     partial class Form1
     {
@@ -39,6 +41,8 @@
             this.button14 = new System.Windows.Forms.Button();
             this.textNotsButton = new System.Windows.Forms.Button();
             this.homeButton = new System.Windows.Forms.Button();
+            this.active = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
@@ -47,7 +51,7 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.childPanel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +77,7 @@
             // 
             this.recycleBinButton.FlatAppearance.BorderSize = 0;
             this.recycleBinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.recycleBinButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recycleBinButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recycleBinButton.ForeColor = System.Drawing.Color.White;
             this.recycleBinButton.Image = ((System.Drawing.Image)(resources.GetObject("recycleBinButton.Image")));
             this.recycleBinButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -93,13 +97,12 @@
             this.SidePanel.Name = "SidePanel";
             this.SidePanel.Size = new System.Drawing.Size(10, 54);
             this.SidePanel.TabIndex = 4;
-            this.SidePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.SidePanel_Paint);
             // 
             // audiosButton
             // 
             this.audiosButton.FlatAppearance.BorderSize = 0;
             this.audiosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.audiosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.audiosButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.audiosButton.ForeColor = System.Drawing.Color.White;
             this.audiosButton.Image = ((System.Drawing.Image)(resources.GetObject("audiosButton.Image")));
             this.audiosButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -116,7 +119,7 @@
             // 
             this.alarmsButton.FlatAppearance.BorderSize = 0;
             this.alarmsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.alarmsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.alarmsButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.alarmsButton.ForeColor = System.Drawing.Color.White;
             this.alarmsButton.Image = ((System.Drawing.Image)(resources.GetObject("alarmsButton.Image")));
             this.alarmsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -133,7 +136,7 @@
             // 
             this.imagesButton.FlatAppearance.BorderSize = 0;
             this.imagesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.imagesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imagesButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.imagesButton.ForeColor = System.Drawing.Color.White;
             this.imagesButton.Image = ((System.Drawing.Image)(resources.GetObject("imagesButton.Image")));
             this.imagesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -141,7 +144,7 @@
             this.imagesButton.Name = "imagesButton";
             this.imagesButton.Size = new System.Drawing.Size(197, 57);
             this.imagesButton.TabIndex = 4;
-            this.imagesButton.Text = "   Screenshotes";
+            this.imagesButton.Text = "   Screenshots";
             this.imagesButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.imagesButton.UseVisualStyleBackColor = true;
             this.imagesButton.Click += new System.EventHandler(this.imagesB_Click);
@@ -150,7 +153,7 @@
             // 
             this.videosButton.FlatAppearance.BorderSize = 0;
             this.videosButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.videosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.videosButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.videosButton.ForeColor = System.Drawing.Color.White;
             this.videosButton.Image = ((System.Drawing.Image)(resources.GetObject("videosButton.Image")));
             this.videosButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -167,7 +170,7 @@
             // 
             this.button14.FlatAppearance.BorderSize = 0;
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button14.ForeColor = System.Drawing.Color.White;
             this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button14.Location = new System.Drawing.Point(3, 546);
@@ -182,7 +185,7 @@
             // 
             this.textNotsButton.FlatAppearance.BorderSize = 0;
             this.textNotsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.textNotsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNotsButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textNotsButton.ForeColor = System.Drawing.Color.White;
             this.textNotsButton.Image = ((System.Drawing.Image)(resources.GetObject("textNotsButton.Image")));
             this.textNotsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -199,7 +202,7 @@
             // 
             this.homeButton.FlatAppearance.BorderSize = 0;
             this.homeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.homeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.homeButton.ForeColor = System.Drawing.Color.White;
             this.homeButton.Image = ((System.Drawing.Image)(resources.GetObject("homeButton.Image")));
             this.homeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -211,6 +214,28 @@
             this.homeButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.homeButton.UseVisualStyleBackColor = true;
             this.homeButton.Click += new System.EventHandler(this.homepageB_Click);
+            // 
+            // active
+            // 
+            this.active.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(137)))), ((int)(((byte)(130)))));
+            this.active.Location = new System.Drawing.Point(-1, 191);
+            this.active.Name = "active";
+            this.active.Size = new System.Drawing.Size(24, 69);
+            this.active.TabIndex = 13;
+            this.active.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AllowDrop = true;
+            this.label1.AutoSize = true;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label1.Location = new System.Drawing.Point(252, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 23);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Memo Mate";
             // 
             // panel2
             // 
@@ -224,19 +249,18 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(360, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(177, 20);
+            this.label4.Size = new System.Drawing.Size(197, 21);
             this.label4.TabIndex = 3;
             this.label4.Text = "Multi Choice Note Taker";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // button8
             // 
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.White;
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -251,7 +275,7 @@
             // 
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.White;
             this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
             this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -266,7 +290,7 @@
             // 
             this.button10.FlatAppearance.BorderSize = 0;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.Color.White;
             this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -281,7 +305,7 @@
             // 
             this.button11.FlatAppearance.BorderSize = 0;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.Color.White;
             this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
             this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -296,7 +320,7 @@
             // 
             this.button12.FlatAppearance.BorderSize = 0;
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button12.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.ForeColor = System.Drawing.Color.White;
             this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
             this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -311,7 +335,7 @@
             // 
             this.closeButton.FlatAppearance.BorderSize = 0;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeButton.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeButton.ForeColor = System.Drawing.Color.White;
             this.closeButton.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.Image")));
             this.closeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -323,24 +347,19 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.closeB_Click);
             // 
-            // label1
+            // childPanel
             // 
-            this.label1.AllowDrop = true;
-            this.label1.AutoSize = true;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label1.Location = new System.Drawing.Point(252, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 22);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Memo Mate";
+            this.childPanel.Location = new System.Drawing.Point(210, 54);
+            this.childPanel.Name = "childPanel";
+            this.childPanel.Size = new System.Drawing.Size(815, 520);
+            this.childPanel.TabIndex = 8;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 580);
+            this.Controls.Add(this.childPanel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.closeButton);
@@ -360,9 +379,7 @@
             this.PerformLayout();
 
         }
-
         #endregion
-
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel SidePanel;
@@ -382,12 +399,8 @@
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        //private Homepage homepage;
-       // private TextNotesForm textNotesForm;
-        //private VideosForm videosForm;
-        //private ImagesForm imagesForm;
-        //private AlarmsForm alarmsForm;
-        //private RecycleBinForm recycleBinForm;
+        private Panel active;
+        private Panel childPanel;
     }
 }
 
