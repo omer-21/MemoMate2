@@ -69,7 +69,7 @@ namespace NoteTaker
                     int size = newNoteForm.SelectedSize;
                     notesManager.AddNote(noteName, DateTime.Now, noteText, font, color, size);
                     // Save the notes to the file
-                    notesManager.SaveNotesToFile(filePath);
+                    notesManager.SaveNotesToFile();
                 }
             }
             DisplayNoteEntries();
@@ -108,16 +108,18 @@ namespace NoteTaker
         {
             // Clear the note entries panel
             flowLayoutPanel1.Controls.Clear();
-            notesManager.LoadNotesFromFile(filePath);
             // Add a NoteEntryControl for each note in noteEntries
-            foreach (NoteEntry note in notesManager.GetAllNotes())
+            if (notesManager.GetAllNotes() != null)
             {
-                if (note.IsDeleted == false)
+                foreach (NoteEntry note in notesManager.GetAllNotes())
                 {
-                    NoteEntryControl noteEntryControl = new NoteEntryControl(note.Name, note.Date, note.Text, note.Id, note.Font, note.Color, note.IsDeleted);
-                    noteEntryControl.EditButtonClicked += NoteEntryControl_EditButtonClicked;
-                    noteEntryControl.DeleteButtonClicked += NoteEntryControl_DeleteButtonClicked;
-                    flowLayoutPanel1.Controls.Add(noteEntryControl);
+                    if (note.IsDeleted == false)
+                    {
+                        NoteEntryControl noteEntryControl = new NoteEntryControl(note.Name, note.Date, note.Text, note.Id, note.Font, note.Color, note.IsDeleted);
+                        noteEntryControl.EditButtonClicked += NoteEntryControl_EditButtonClicked;
+                        noteEntryControl.DeleteButtonClicked += NoteEntryControl_DeleteButtonClicked;
+                        flowLayoutPanel1.Controls.Add(noteEntryControl);
+                    }
                 }
             }
         }
@@ -145,7 +147,7 @@ namespace NoteTaker
                     notesManager.EditNote(noteId, editForm.NoteName, editForm.NoteText, editForm.SelectedFont, editForm.SelectedColor, editForm.SelectedSize);
                 }
             }
-            notesManager.SaveNotesToFile(filePath);
+            notesManager.SaveNotesToFile();
             DisplayNoteEntries();
         }
         private void NoteEntryControl_DeleteButtonClicked(object sender, EventArgs e)
@@ -155,7 +157,7 @@ namespace NoteTaker
             // Remove the note entry
             notesManager.RemoveNote(noteEntryControl.GetId());
             // Save the notes to the file
-            notesManager.SaveNotesToFile(filePath);
+            notesManager.SaveNotesToFile();
             // Redisplay the note entries
             DisplayNoteEntries();
         }

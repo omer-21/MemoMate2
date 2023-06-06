@@ -39,7 +39,7 @@ namespace NoteTaker
             timer1.Start();
             // Clear the note entries panel
             flowLayoutPanel1.Controls.Clear();
-            notesManager.LoadNotesFromFile(filePath);
+            notesManager.LoadNotesFromFile();
             // Add a NoteEntryControl for each note in noteEntries
             foreach (NoteEntry note in notesManager.GetAllNotes())
             {

@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using NAudio.Wave;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Newtonsoft.Json;
 using System.Text.Json.Serialization;
 using System.Web.UI.WebControls;
@@ -29,7 +25,6 @@ namespace NoteTaker
         private PlaybackState playbackState = PlaybackState.Stopped;
 
         private List<SoundItem> soundItems = new List<SoundItem>();
-
         public class SoundItem
         {
             public string FileName { get; set; }
@@ -196,7 +191,6 @@ namespace NoteTaker
             {
                 var selectedRow = dataGridView1.SelectedRows[0];
                 var selectedSoundItem = (SoundItem)selectedRow.Tag;
-
                 if (waveOut.PlaybackState == PlaybackState.Playing)
                 {
                     waveOut.Pause(); // Eğer ses çalınıyorsa, duraklat
@@ -259,7 +253,6 @@ namespace NoteTaker
                     audioFile.Dispose();
                     audioFile = null;
                 }
-
                 // Dosyayı sil
                 File.Delete(selectedSoundItem.FilePath);
                 dataGridView1.Rows.Remove(selectedRow);
@@ -281,7 +274,6 @@ namespace NoteTaker
             if (File.Exists(filePath))
             {
                 string json = File.ReadAllText(filePath);
-                
                 var soundPaths = JsonConvert.DeserializeObject<List<string>>(json);
 
                 foreach (string soundPath in soundPaths)

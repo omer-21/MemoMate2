@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
@@ -40,8 +38,6 @@ namespace NoteTaker
             IndexForm instance = IndexForm.Instance;
             LoadUserControl(instance);
         }
-        //Screenshot codes:
-        //{
         private void imagesB_Click(object sender, EventArgs e)
         {
             SidePanel.Height = imagesButton.Height;
@@ -97,16 +93,6 @@ namespace NoteTaker
         private void closeB_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-        public void Loadform(object Form)
-        {
-            if (this.childPanel.Controls.Count > 0)
-                this.childPanel.Controls.RemoveAt(0);
-            Form f = Form as Form;
-            //f.TopLevel = false;
-            //f.Dock = DockStyle.Fill;
-            f.BringToFront();
-            //f.Show();
         }
         public void LoadUserControl(object Form)
         {

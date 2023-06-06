@@ -36,6 +36,7 @@
             this.DeleteButton = new System.Windows.Forms.Button();
             this.PlayButton = new System.Windows.Forms.Button();
             this.RecordButton = new System.Windows.Forms.Button();
+
             this.pictureBoxDelete = new System.Windows.Forms.PictureBox();
             this.pictureBoxPause = new System.Windows.Forms.PictureBox();
             this.pictureBoxPlay = new System.Windows.Forms.PictureBox();
@@ -186,7 +187,47 @@
             // 
             // AudiosForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.pictureBoxPause.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPause.Image")));
+            this.pictureBoxPause.Location = new System.Drawing.Point(559, 205);
+            this.pictureBoxPause.Name = "pictureBoxPause";
+            this.pictureBoxPause.Size = new System.Drawing.Size(55, 46);
+            this.pictureBoxPause.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPause.TabIndex = 12;
+            this.pictureBoxPause.TabStop = false;
+            // 
+            // pictureBoxPlay
+            // 
+            this.pictureBoxPlay.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPlay.Image")));
+            this.pictureBoxPlay.Location = new System.Drawing.Point(559, 205);
+            this.pictureBoxPlay.Name = "pictureBoxPlay";
+            this.pictureBoxPlay.Size = new System.Drawing.Size(54, 46);
+            this.pictureBoxPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPlay.TabIndex = 11;
+            this.pictureBoxPlay.TabStop = false;
+            // 
+            // pictureBoxStopRec
+            // 
+            this.pictureBoxStopRec.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxStopRec.Image")));
+            this.pictureBoxStopRec.Location = new System.Drawing.Point(559, 135);
+            this.pictureBoxStopRec.Name = "pictureBoxStopRec";
+            this.pictureBoxStopRec.Size = new System.Drawing.Size(55, 46);
+            this.pictureBoxStopRec.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxStopRec.TabIndex = 10;
+            this.pictureBoxStopRec.TabStop = false;
+            // 
+            // pictureBoxStartRec
+            // 
+            this.pictureBoxStartRec.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxStartRec.Image")));
+            this.pictureBoxStartRec.Location = new System.Drawing.Point(559, 135);
+            this.pictureBoxStartRec.Name = "pictureBoxStartRec";
+            this.pictureBoxStartRec.Size = new System.Drawing.Size(54, 46);
+            this.pictureBoxStartRec.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxStartRec.TabIndex = 9;
+            this.pictureBoxStartRec.TabStop = false;
+            // 
+            // AudiosForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pictureBoxDelete);
             this.Controls.Add(this.pictureBoxPause);
@@ -216,7 +257,6 @@
         }
 
         #endregion
-
         private System.Windows.Forms.PictureBox pictureBoxDelete;
         private System.Windows.Forms.PictureBox pictureBoxPause;
         private System.Windows.Forms.PictureBox pictureBoxPlay;

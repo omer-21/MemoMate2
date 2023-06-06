@@ -56,7 +56,7 @@ namespace NoteTaker
             this.textBoxSearch.TabIndex = 0;
             this.textBoxSearch.GotFocus += new System.EventHandler(this.txtboxGFocus);
             this.textBoxSearch.LostFocus += new System.EventHandler(this.txtboxLFocus);
-            // 
+            //
             // clearSearchButton
             // 
             this.clearSearchButton.AutoEllipsis = true;

@@ -63,6 +63,7 @@ namespace NoteTaker
             e.DrawDefault = true;
         }
         private void Form1_Load(object sender, EventArgs e)
+
         {
             monthCalendar1.MinDate = DateTime.Today;
 

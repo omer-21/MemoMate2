@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -211,20 +207,15 @@ namespace NoteTaker
             {
                 this.Controls.Add(currentPictureBox); // currentPictureBox'ı formun kontrol listesine ekler.
             }
-
             // Butonları her durumda ekle
             this.Controls.Add(CreateNextButton());
             this.Controls.Add(CreatePreviousButton());
             this.Controls.Add(CreateDeleteButton());
         }
-
         private void ImagesForm_Load(object sender, EventArgs e)
         {
-
             UpdateGallery();
-
         }
-
         private void PreviousButton_Click(object sender, EventArgs e) // önceki screenshot gösterir
         {
             if (currentPictureBoxIndex > 0)
@@ -233,7 +224,6 @@ namespace NoteTaker
                 UpdateGallery();
             }
         }
-
         private void NextButton_Click(object sender, EventArgs e) // sonraki screenshot gösterir
         {
             if (currentPictureBoxIndex < pictureBoxes.Count - 1)
@@ -274,16 +264,11 @@ namespace NoteTaker
                 fullScreenForm.ShowDialog();
             }
         }
-
-
         private void ScreenshotForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
+            screenshotForm.Hide();
+            ShowMainForm();
         }
-
-
-
-
-
     }
 }
