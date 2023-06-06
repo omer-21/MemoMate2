@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-
+using System.IO;
 namespace NoteTaker
 {
     public partial class IndexForm : UserControl
@@ -13,6 +13,8 @@ namespace NoteTaker
         private const string PlaceholderText = "Search Notes";
         private bool isPlaceholderTextDisplayed = true;
         public static bool home = true;
+        public string filePath;
+        public string solutionFolderPath;
         public static IndexForm Instance
         {
             get
@@ -31,9 +33,12 @@ namespace NoteTaker
         {
             InitializeComponent();
             DisplayPlaceholderText();
-            notesManager = new NotesManager();
+            solutionFolderPath = AppDomain.CurrentDomain.BaseDirectory;
+            filePath = Path.Combine(solutionFolderPath, "DataFiles", "TextNotes.json");
+            notesManager = new NotesManager(filePath);
             DisplayNoteEntries();
             timer1.Start();
+            
         }
 
         private void searchButton_Click(object sender, EventArgs e)

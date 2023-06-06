@@ -201,11 +201,11 @@
     <Compile Include="AudiosForm.Designer.cs">
       <DependentUpon>AudiosForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomePageForm.cs">
+    <Compile Include="main.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="HomePageForm.Designer.cs">
-      <DependentUpon>HomePageForm.cs</DependentUpon>
+    <Compile Include="main.Designer.cs">
+      <DependentUpon>main.cs</DependentUpon>
     </Compile>
     <Compile Include="TextNotesItems\EditNoteEntryForm.cs">
       <SubType>Form</SubType>
@@ -260,6 +260,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AlarmsForm.resx">
+      <DependentUpon>AlarmsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AudiosForm.resx">
       <DependentUpon>AudiosForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,7 +283,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="notlar.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -291,6 +296,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="sounds.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -313,6 +319,39 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3482470.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\voice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-minus-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-off-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-note-24 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-clear-25.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

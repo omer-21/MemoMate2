@@ -7,6 +7,8 @@ using System.Linq;
 using System.Windows.Forms;
 using NAudio.Wave;
 using Newtonsoft.Json;
+using System.Text.Json.Serialization;
+using System.Web.UI.WebControls;
 
 namespace NoteTaker
 {
@@ -23,6 +25,12 @@ namespace NoteTaker
         private PlaybackState playbackState = PlaybackState.Stopped;
 
         private List<SoundItem> soundItems = new List<SoundItem>();
+        public class SoundItem
+        {
+            public string FileName { get; set; }
+            public string FilePath { get; set; }
+            public TimeSpan Duration { get; set; }
+        }
         public static bool home = true;
         private static AudiosForm instance;
         public static AudiosForm Instance
@@ -39,14 +47,7 @@ namespace NoteTaker
                 return instance;
             }
         }
-        public class SoundItem
-        {
-            public string FileName { get; set; }
-            public string FilePath { get; set; }
-            public TimeSpan Duration { get; set; }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void AudiosForm_Load(object sender, EventArgs e)
         {
             LoadSoundsFromFile(soundsFilePath);
             SetColumnHeaderColor();
@@ -65,15 +66,15 @@ namespace NoteTaker
             pictureBoxStopRec.Visible = false;
             pictureBoxPause.Visible = false;
         }
-
         private void SetColumnHeaderColor()
         {
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(178, 8, 55);
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
         }
+       
 
-        private void RecordButton_Click(object sender, EventArgs e)
+        private void RecordButton_Click_1(object sender, EventArgs e)
         {
             if (!isRecording)
             {
@@ -133,6 +134,8 @@ namespace NoteTaker
                 AddSoundItemToDataGridView(soundItem);
                 SaveSoundsToFile(soundsFilePath);
             }
+            CheckButtonEnabled();
+
         }
 
         private void WaveIn_DataAvailable(object sender, WaveInEventArgs e)
@@ -182,14 +185,12 @@ namespace NoteTaker
             row.Cells["DurationColumn"].Value = soundItem.Duration.ToString(@"mm\:ss");
             row.Tag = soundItem; // SoundItem'i satırın Tag özelliğine atayın
         }
-
-        private void PlayButton_Click(object sender, EventArgs e)
+        private void PlayButton_Click_1(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 var selectedRow = dataGridView1.SelectedRows[0];
                 var selectedSoundItem = (SoundItem)selectedRow.Tag;
-
                 if (waveOut.PlaybackState == PlaybackState.Playing)
                 {
                     waveOut.Pause(); // Eğer ses çalınıyorsa, duraklat
@@ -232,8 +233,7 @@ namespace NoteTaker
                 };
             }
         }
-
-        private void DeleteButton_Click(object sender, EventArgs e)
+         private void DeleteButton_Click_1(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
@@ -253,12 +253,12 @@ namespace NoteTaker
                     audioFile.Dispose();
                     audioFile = null;
                 }
-
                 // Dosyayı sil
                 File.Delete(selectedSoundItem.FilePath);
                 dataGridView1.Rows.Remove(selectedRow);
                 soundItems.Remove(selectedSoundItem);
                 SaveSoundsToFile(soundsFilePath);
+                CheckButtonEnabled();
             }
         }
         private void SaveSoundsToFile(string filePath)
@@ -289,6 +289,14 @@ namespace NoteTaker
                     AddSoundItemToDataGridView(soundItem);
                 }
             }
+            CheckButtonEnabled();
         }
+        private void CheckButtonEnabled()
+        {
+            DeleteButton.Enabled = soundItems.Count > 0;
+            PlayButton.Enabled = soundItems.Count > 0;
+        }
+
+
     }
 }

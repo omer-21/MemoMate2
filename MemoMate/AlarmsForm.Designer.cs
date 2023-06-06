@@ -62,9 +62,9 @@
             this.listView1.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.listView1.ForeColor = System.Drawing.Color.Black;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(84, 302);
+            this.listView1.Location = new System.Drawing.Point(84, 278);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(653, 215);
+            this.listView1.Size = new System.Drawing.Size(653, 190);
             this.listView1.TabIndex = 24;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
@@ -91,7 +91,7 @@
             this.buttonSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSil.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.buttonSil.ForeColor = System.Drawing.Color.Black;
-            this.buttonSil.Location = new System.Drawing.Point(364, 523);
+            this.buttonSil.Location = new System.Drawing.Point(366, 474);
             this.buttonSil.Name = "buttonSil";
             this.buttonSil.Size = new System.Drawing.Size(97, 32);
             this.buttonSil.TabIndex = 22;
@@ -182,7 +182,7 @@
             this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.Location = new System.Drawing.Point(13, 304);
+            this.label2.Location = new System.Drawing.Point(13, 280);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 21);
             this.label2.TabIndex = 29;
@@ -216,10 +216,9 @@
             this.label6.TabIndex = 32;
             this.label6.Text = "Minute:";
             // 
-            // Form1
+            // AlarmsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(760, 564);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxDakika);
             this.Controls.Add(this.textBoxSaat);
@@ -238,7 +237,9 @@
             this.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Load += new System.EventHandler(this.Form_Load);
+            this.Name = "AlarmsForm";
+            this.Size = new System.Drawing.Size(760, 522);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

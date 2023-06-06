@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using VisioForge.Core.VideoCapture;
@@ -42,6 +43,13 @@ namespace NoteTaker
             core = new VideoCaptureCore(videoView1 as IVideoView);
             listFile.ValueMember = "Path";
             listFile.DisplayMember = "FileName";
+            btKaydet.BackColor= Color.FromArgb(178, 8, 55);
+            btKaydetAd.BackColor= Color.FromArgb(178, 8, 55);
+            btnOpen.BackColor= Color.FromArgb(178, 8, 55);
+            btPause.BackColor= Color.FromArgb(178, 8, 55);
+            btResume.BackColor= Color.FromArgb(178, 8, 55);
+            btStart.BackColor= Color.FromArgb(178, 8, 55);
+            btStop.BackColor= Color.FromArgb(178, 8, 55);
         }
 
         private async void btStart_Click(object sender, EventArgs e)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
 
 namespace NoteTaker
 {
@@ -13,8 +14,8 @@ namespace NoteTaker
             SidePanel.Top = homeButton.Top;
             active.Visible = true;
             active.Top = textNotsButton.Top;
-            HomePageForm.home = false;
-            HomePageForm instance = HomePageForm.Instance;
+            main.home = false;
+            main instance = main.Instance;
             LoadUserControl(instance);
         }
         private void homepageB_Click(object sender, EventArgs e)
@@ -23,8 +24,8 @@ namespace NoteTaker
             SidePanel.Top = homeButton.Top;
             active.Visible = true;
             active.Top = textNotsButton.Top;
-            HomePageForm.home = false;
-            HomePageForm instance = HomePageForm.Instance;
+            main.home = false;
+            main instance = main.Instance;
             LoadUserControl(instance);
         }
         private void textNotesB_Click(object sender, EventArgs e)
@@ -77,6 +78,7 @@ namespace NoteTaker
             RecycleBinForm.home = false;
             RecycleBinForm instance = RecycleBinForm.Instance;
             LoadUserControl(instance);
+            instance.DisplayNoteEntries();
         }
         private void audiosB_Click(object sender, EventArgs e)
         {
@@ -108,7 +110,7 @@ namespace NoteTaker
 
         private void button12_Click(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Minimized;
+            WindowState=FormWindowState.Minimized;
         }
     }
 }
